@@ -1,11 +1,10 @@
 #include "oswidget.hpp"
 #include "window.hpp"
 #include "square.hpp"
-#include "graphics.hpp"
 #include "editor.hpp"
 #include <iostream>
 using namespace std;
-using namespace genv;
+
 //todo: actplayer ref ki
 
 const int XX=400;
@@ -16,6 +15,7 @@ class Mywindow : public window{
     editor *e;
     int sx;
     int sy;
+
 
     public:
     Mywindow(int xx, int yy){
@@ -31,16 +31,25 @@ class Mywindow : public window{
         }
 
        }
-e = new editor(5,5,60,30,"probawidget");
+    e = new editor(this,5,5,60,30,"New Game / RESET" , "reset");
     w.push_back(e);
     }
 
-
+void esemeny(string azonosito){
+    if(azonosito=="reset"){
+        for(int i=0; i<20; i++){
+            for(int j=0; j<20; j++){
+                t[i][j]->reSet();
+            }
+        }
+    kinyert=0;
+    }
+}
 };
 
 int main()
 {
-    gout.open(XX,YY);
+
     Mywindow *Mw = new Mywindow(20,20);
     Mw->eventloop(XX,YY);
 

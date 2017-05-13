@@ -45,11 +45,7 @@ int Square::GetAllapot() const
     return _allapot;
 }
 
-void Square::Setsquare(int x, int y , int sx, int sy){
-
-_x=x;
-_y=y;
-_sx=sx;
-_sy=sy;
+void Square::reSet(){
+_allapot=0;
 
 }
