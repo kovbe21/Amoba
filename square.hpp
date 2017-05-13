@@ -11,7 +11,7 @@ public:
 
     Square(int x, int y, int sx, int sy) ;
     virtual void kirajzol() const;
-    virtual void handle(genv::event ev , int& actplayer) ;
+    virtual void handle(genv::event ev , int& lepesszam) ;
     virtual int GetAllapot() const;
     virtual void Setsquare(int x,int y, int sx, int sy);
 

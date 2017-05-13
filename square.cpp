@@ -29,13 +29,14 @@ void Square::kirajzol() const
 
 }
 
-void Square::handle(event ev ,int& actplayer)
+void Square::handle(event ev ,int& lepesszam)
 {
-
+    cout<<"handle";
     if (ev.type == ev_mouse && is_selected(ev.pos_x, ev.pos_y) && ev.button==btn_left && _allapot==0) {
-        _allapot=(actplayer % 2)+1;
-        actplayer++;
-        cout<<"allapot: "<<_allapot<<endl;
+
+        _allapot=(lepesszam % 2)+1;
+        lepesszam++;
+        cout<<lepesszam;
     }
 
 }

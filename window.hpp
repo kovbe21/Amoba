@@ -7,7 +7,8 @@
 using namespace std;
 class window{
 protected:
-    Square* w[20][20];
+    vector<Widget*> w;
+    Square* t[20][20];
 
 public:
     window();

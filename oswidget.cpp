@@ -17,7 +17,7 @@ _sy=sy;
 }
 
 void Widget::kirajzol() const {}
-void Widget::handle(event ev)  {}
+void Widget::handle(event ev,int& actplayer)  {}
 void Widget::Setsquare() {}
 bool Widget::is_selected(int mouse_x, int mouse_y) const
 {
