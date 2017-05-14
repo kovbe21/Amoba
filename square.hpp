@@ -2,8 +2,7 @@
 #define SQUARE_HPP_INCLUDED
 
 #include "oswidget.hpp"
-#include <iostream>
-using namespace std;
+
 class Square : public Widget{
 protected:
     int _allapot;

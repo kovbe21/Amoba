@@ -3,20 +3,20 @@
 
 #include "graphics.hpp"
 #include "oswidget.hpp"
-
-using namespace std;
-
+#include "window.hpp"
 
 class statikstring : public Widget{
 protected:
-    string s;
-
+    std::string _s;
+    std::string _azonosito;
+    window * _parent;
 
 public:
-    statikstring(int x, int y, int sx, int sy , string s );
+    statikstring(window * parent , int x, int y, int sx, int sy , std::string s, std::string azonosito );
     virtual void kirajzol() const;
-    //virtual void set_s( string s_) ;
+    virtual void unidraw(int lepesszam, int kinyert,int XX,int YY);
+
 };
 
-//gout.twidth(s)+10
+
 #endif // STATIKSTRING_HPP_INCLUDED

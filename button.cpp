@@ -3,9 +3,9 @@
 #include "button.hpp"
 
 using namespace genv;
-using namespace std;
 
-button::button(window * parent,int x, int y, int sx, int sy , string s , string azonosito )
+
+button::button(window * parent,int x, int y, int sx, int sy ,std:: string s ,std:: string azonosito )
     : Widget(x,y,sx,sy)
 {
 _parent=parent;

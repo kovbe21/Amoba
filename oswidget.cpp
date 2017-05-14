@@ -1,9 +1,6 @@
 #include "oswidget.hpp"
 #include "graphics.hpp"
-#include <fstream>
-#include <iostream>
-using namespace std;
-using namespace genv;
+
 
 
 Widget::Widget(int x, int y, int sx, int sy)
@@ -17,7 +14,7 @@ _sy=sy;
 }
 
 void Widget::kirajzol() const {}
-void Widget::handle(event ev,int& actplayer)  {}
+void Widget::handle(genv::event ev,int& lepesszam)  {}
 void Widget::Setsquare() {}
 bool Widget::is_selected(int mouse_x, int mouse_y) const
 {

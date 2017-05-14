@@ -2,10 +2,8 @@
 #define OSWIDGET_HPP_INCLUDED
 
 #include "graphics.hpp"
-#include <iostream>
-using namespace std;
 
-using namespace std;
+
 
 class Widget{
 protected:
