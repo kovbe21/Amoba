@@ -10,6 +10,7 @@ protected:
     vector<Widget*> w;
     Square* t[20][20];
     int kinyert;
+    bool exit;
 
 public:
     window();

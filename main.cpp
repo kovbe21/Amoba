@@ -1,18 +1,22 @@
 #include "oswidget.hpp"
+#include "statikstring.hpp"
 #include "window.hpp"
 #include "square.hpp"
-#include "editor.hpp"
+#include "button.hpp"
 #include <iostream>
 using namespace std;
 
 //todo: actplayer ref ki
 
 const int XX=400;
-const int YY=450;
+const int YY=500;
 
 class Mywindow : public window{
     protected:
-    editor *e;
+    button *r;
+    button *q;
+    statikstring *s;
+
     int sx;
     int sy;
 
@@ -22,17 +26,21 @@ class Mywindow : public window{
 
 
         sx=XX/xx;
-        sy=(YY-50)/yy;
+        sy=(YY-100)/yy;
        for(int i=0; i<xx; i++){
         for(int j=0; j<yy; j++){
 
-            t[i][j]=new Square(i*sx,50+j*sy,sx,sy);
+            t[i][j]=new Square(i*sx,100+j*sy,sx,sy);
             w.push_back(t[i][j]);
         }
 
        }
-    e = new editor(this,5,5,60,30,"New Game / RESET" , "reset");
-    w.push_back(e);
+    r = new button(this,5,5,0,30,"New Game / RESET" , "reset");
+    w.push_back(r);
+    s = new statikstring(100,70,0,30,"Next: ");
+    w.push_back(s);
+    q = new button(this,220,5,0,30,"Exit (or press esc)", "exit");
+    w.push_back(q);
     }
 
 void esemeny(string azonosito){
@@ -43,6 +51,9 @@ void esemeny(string azonosito){
             }
         }
     kinyert=0;
+    }
+    if(azonosito=="exit"){
+        exit=true;
     }
 }
 };
