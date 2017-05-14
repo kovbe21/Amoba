@@ -5,19 +5,24 @@
 #include "button.hpp"
 #include <vector>
 
-
 using namespace genv;
 
 
 
-void ellenor(Square* t[20][20],int akt,int& kinyert){
+void ellenor(Square* t[20][20],int akt,int& kinyert,int &lepesszam){
 
 int x,y,n,w,s,e,nw,sw,se,ne;
 n=w=s=e=nw=ne=sw=se=0;
 x=akt/20; //hányszor van meg benne a 20, hanyadik oszlop
 y=akt%20;//hanyadik sor
-int allapot=t[x][y]->GetAllapot();
 int tele=0;
+if(t[x][y]->GetAllapot()==0){
+    t[x][y]->Setsquare((lepesszam % 2)+1);
+    lepesszam++;
+
+int allapot=t[x][y]->GetAllapot();
+
+
 //westsum:
 for(int i=1 ; i<x+1 ; i++){
     if(allapot==t[x-i][y]->GetAllapot()){
@@ -78,6 +83,9 @@ for(int i=0 ; i<20 ; i++){
     }
 }
 if(tele==400 && kinyert==0){kinyert=3;}
+
+}
+
 }
 
 window::window()
@@ -106,10 +114,12 @@ event ev;
         }
 
         if(akt!=-1){
-            w[akt]->handle(ev , lepesszam);
-            if(akt<400){                    //todo: eleg csunya, feltételezem hogy a widget vector elején vannak a square-ek
-                    ellenor(t,akt,kinyert);
-                }
+
+            if(akt<400){                    //eleg csunya, feltételezem hogy a widget vector elején vannak a square-ek,
+                ellenor(t,akt,kinyert,lepesszam); //és megengedem magamnak azt a könnyitést hogy én tudom mi hanyadik.
+            }else{
+                w[akt]->handle(ev);
+            }
         }
 
         akt=-1;

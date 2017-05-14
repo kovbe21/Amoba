@@ -22,19 +22,19 @@ class Mywindow : public window{
 
         sx=XX/20;
         sy=(XX)/20;
-       for(int i=0; i<20; i++){
-        for(int j=0; j<20; j++){
+        for(int i=0; i<20; i++){
+         for(int j=0; j<20; j++){
 
             t[i][j]=new Square(i*sx,YY-XX+j*sy,sx,sy);
             w.push_back(t[i][j]);
+         }
         }
-       }
-    r = new button(this,5,5,0,30,"New Game / RESET" , "reset");
-    u = new statikstring(this,150,70,0,30,"Next: ","uni");
-    q = new button(this,220,5,0,30,"Exit (or press esc)", "exit");
-    w.push_back(u);
-    w.push_back(r);
-    w.push_back(q);
+        r = new button(this,5,5,0,30,"New Game / RESET" , "reset");
+        u = new statikstring(this,150,70,0,30,"Next: ","uni");
+        q = new button(this,220,5,0,30,"Exit (or press esc)", "exit");
+        w.push_back(u);
+        w.push_back(r);
+        w.push_back(q);
     }
 
 
@@ -42,7 +42,7 @@ class Mywindow : public window{
         if(azonosito=="reset"){
             for(int i=0; i<20; i++){
                 for(int j=0; j<20; j++){
-                    t[i][j]->reSet();
+                    t[i][j]->Setsquare(0);
                 }
             }
             kinyert=0;

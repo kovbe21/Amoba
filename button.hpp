@@ -14,7 +14,7 @@ protected:
 public:
     button(window * parent , int x, int y, int sx, int sy , std::string s ,std:: string azonosito );
     virtual void kirajzol() const;
-    virtual void handle(genv::event ev,int &lepesszam);
+    virtual void handle(genv::event ev);
 };
 
 #endif // BUTTON_HPP_INCLUDED

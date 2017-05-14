@@ -34,8 +34,17 @@ if(kinyert!=0){
             int allapot=(lepesszam % 2)+1;
             if(allapot==1){
                 gout<<color(255,0,0);
-            }else{gout<<color(0,0,255);}
+            }else if(allapot==2){
+                gout<<color(0,0,255);
+            }
             gout<<move_to(_x+_sx,_y)<<box(30,30);
+            if(kinyert>0){
+                gout<<color(0,0,0)<<move_to(_x+_sx,_y)<<box(30,30)
+                    <<color(255,255,255)<<move_to(_x+_sx,_y)
+                    <<line_to(_x+_sx+30,_y+30)<<move_to(_x+_sx+30,_y)
+                    <<line_to(_x+_sx,_y+30);
+            }
+
 
 
 }
@@ -45,6 +54,7 @@ void statikstring::kirajzol() const{
     gout<<move_to(_x , _y)<<color(255,255,255)<<box(_sx , _sy);
     gout<<move_to(_x+2 , _y+2)<<color(0,0,0)<<box(_sx-4, _sy-4);
     gout<<move_to(_x+3,_y+_sy/2+gout.cascent()/2)<<color(255,255,255)<<text(_s);
+    gout<<move_to(110,_y-10)<<text("5 in a row. Have fun!");
 
     _parent->esemeny(_azonosito);
 }

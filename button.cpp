@@ -22,7 +22,7 @@ void button::kirajzol() const{
     gout<<move_to(_x+3,_y+_sy/2+gout.cascent()/2)<<color(255,255,255)<<text(_s);
 }
 
-void button::handle(event ev, int &lepesszam)
+void button::handle(event ev)
 {
     _parent->esemeny(_azonosito);
 

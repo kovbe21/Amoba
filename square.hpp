@@ -10,9 +10,8 @@ public:
 
     Square(int x, int y, int sx, int sy) ;
     virtual void kirajzol() const;
-    virtual void handle(genv::event ev , int& lepesszam) ;
     virtual int GetAllapot() const;
-    virtual void reSet();
+    virtual void Setsquare(int all);
 
 };
 

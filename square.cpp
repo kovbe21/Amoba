@@ -21,21 +21,12 @@ void Square::kirajzol() const
     gout << move_to(_x+5, _y+5) << box(_sx-10, _sy-10);
 }
 
-void Square::handle(event ev ,int& lepesszam){
 
-    if (ev.type == ev_mouse && is_selected(ev.pos_x, ev.pos_y) && ev.button==btn_left && _allapot==0) {
-
-        _allapot=(lepesszam % 2)+1;
-        lepesszam++;
-    }
-
-}
 
 int Square::GetAllapot() const{
     return _allapot;
 }
 
-void Square::reSet(){
-_allapot=0;
-
+void Square::Setsquare(int all){
+_allapot=all;
 }
